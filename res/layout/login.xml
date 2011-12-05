@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+	
+    
+    <LinearLayout 
+        android:gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp">
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_title" />
+	</LinearLayout>
+
+        <TextView
+            android:id="@string/usuario"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:text="Usuário" />
+        
+        <EditText 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_usuario"/>
+
+        <TextView
+            android:id="@+string/senha"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:text="Senha" />
+
+        <EditText
+            android:id="@+id/txt_senha"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" >
+
+            <requestFocus />
+        </EditText>
+        
+		<LinearLayout 
+    		android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:gravity="center_horizontal">
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Entrar" />
+
+        <Button
+            android:id="@+id/bt_sair"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Sair" />
+			
+        </LinearLayout>
+</LinearLayout>

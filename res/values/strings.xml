@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Menus</string>
+    <string name="app_name">CursoUnipacContagem</string>
+    <string name="login_title">Login/Sistema Unipac</string>
+    <string name="sair">Sair</string>
+    <string name="login">Login</string>
+    <string name="usuario">Usuário</string>
+    <string name="senha">Senha</string>
+    <string name="menu_meusdados">Meusa dados</string>
+    <string name="menu_agendamentos">Agendamento</string>
+    <string name="menu_agandar">Agendar</string>
+    
+
+</resources>
