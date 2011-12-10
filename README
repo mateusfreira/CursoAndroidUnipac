@@ -1,0 +1,13 @@
+http://10.0.0.145:8080/JavaFlex/e-belle-client/ProjectTcc.swf
+
+
+66.228.57.73:8080
+
+http://10.0.0.145:8080/JavaFlex/Agendamento?apelido=carol&senha=1234&empresa=1&action=get_atendimentos
+
+
+http://10.0.0.145:8080/JavaFlex/Agendamento?apelido=carol&senha=1234&empresa=1&action=login
+
+
+
+http://10.0.0.145:8080/JavaFlex/Agendamento?apelido=carol&senha=1234&empresa=1&action=agenda_atendimento&funcionario=1&inicio=08:00&qtd=1&servico=150
