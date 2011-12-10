@@ -4,24 +4,21 @@
 	android:orientation="vertical">
 	<EditText android:id="@+id/tx_funcionario"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:text="Funcionairo"
-		>
-		
+		android:text="Funcionairo">
+
 	</EditText>
 	<EditText android:id="@+id/tx_horario" android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:text="horario"
-		>
+		android:layout_height="wrap_content" android:text="horario">
 		<requestFocus></requestFocus>
 	</EditText>
-	<EditText android:id="@+id/tx_qtd"
-	android:text="Quantidade"
-	 android:layout_width="fill_parent"
-		android:layout_height="wrap_content">
+	<EditText android:id="@+id/tx_qtd" android:text="Quantidade"
+		android:layout_width="fill_parent" android:layout_height="wrap_content">
 		<requestFocus></requestFocus>
 	</EditText>
-	<Spinner android:layout_height="wrap_content" 
-	android:layout_width="fill_parent" android:id="@+id/sp_servicos">
+	<Spinner android:layout_height="wrap_content"
+		android:layout_width="fill_parent" android:id="@+id/sp_servicos">
 	</Spinner>
+	<Button android:text="Agendar" android:id="@+id/bt_agendar"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
 
 </LinearLayout>

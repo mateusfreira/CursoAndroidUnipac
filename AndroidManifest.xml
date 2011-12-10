@@ -14,6 +14,7 @@
             </intent-filter>
         </activity>
         <activity android:name="MeusDados"></activity>
+        <activity android:name="Agendamento"></activity>
 
     </application>
 </manifest>

@@ -82,8 +82,10 @@ public class CorsoUnipacContagemActivity extends Activity {
 	public boolean login(String usuario, String senha) {
 		try {
 			HttpRequest httpRequest = new HttpRequest();
+			Log.e(TAG, BASE_URL + "?action=login&apelido=" + usuario + "&senha="
+					+ senha + "&empresa=1");
 			String result = httpRequest.get(BASE_URL + "?action=login&apelido="
-					+ usuario + "senha=" + senha + "&empresa=1");
+					+ usuario + "&senha=" + senha + "&empresa=1");
 			if (result.startsWith("Erro")) {
 				return false;
 			} else {

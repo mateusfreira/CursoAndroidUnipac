@@ -1,11 +1,12 @@
 package com.unipac.curso.android.primeiraaula.model;
 
-import java.util.Date;
-
 public class UsuarioDto {
 	private int id;
 	private String nome;
-//	private Date data_aniversario;
+	private String apelido;
+	private String senha;
+
+	// private Date data_aniversario;
 
 	public int getId() {
 		return id;
@@ -23,11 +24,27 @@ public class UsuarioDto {
 		this.nome = nome;
 	}
 
-/*	public Date getData_aniversario() {
-		return data_aniversario;
+	public String getApelido() {
+
+		return apelido;
 	}
 
-	public void setData_aniversario(Date data_aniversario) {
-		this.data_aniversario = data_aniversario;
-	}*/
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public void setApelido(String apelido) {
+		this.apelido = apelido;
+	}
+
+	/*
+	 * public Date getData_aniversario() { return data_aniversario; }
+	 * 
+	 * public void setData_aniversario(Date data_aniversario) {
+	 * this.data_aniversario = data_aniversario; }
+	 */
 }
