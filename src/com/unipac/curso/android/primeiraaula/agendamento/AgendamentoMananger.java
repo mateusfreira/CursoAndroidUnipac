@@ -1,7 +1,6 @@
 package com.unipac.curso.android.primeiraaula.agendamento;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import com.unipac.curso.android.primeiraaula.CorsoUnipacContagemActivity;
 import com.unipac.curso.android.primeiraaula.model.UsuarioDto;
@@ -22,18 +21,20 @@ public class AgendamentoMananger {
 				+ "&action=agenda_atendimento"
 				+ "&funcionario=" + funcionario
 				+ "&inicio=" + horaInicio 
-				+ "qtd=" + qtd
+				+ "&qtd=" + qtd
 				+ "&servico="+ servico;
 		String url = CorsoUnipacContagemActivity.BASE_URL+params;
 		Log.d(CorsoUnipacContagemActivity.TAG, url);
 		try {
-			String result = httpRequest.get(url);
-			if(result.startsWith("Erro")){
-				return false;
-			}else{
-				return true;
-			}
-			
+				String result = httpRequest.get(url);
+				if(result.startsWith("Erro")){
+					Log.d(CorsoUnipacContagemActivity.TAG, result);
+					return false;
+				}else{
+					Log.d(CorsoUnipacContagemActivity.TAG, "Erro"+result);
+					return true;
+				}
+				
 		} catch (Exception e) {
 			Log.d(CorsoUnipacContagemActivity.TAG, "Erro no agendamento",e);
 			return false;
