@@ -18,12 +18,13 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
 public class HttpRequest {
-	static HttpClient client = new DefaultHttpClient();
 
 	public String get(String url) throws Exception {
+		HttpClient client = new DefaultHttpClient();
 		try {
 			BufferedReader in = null;
 			StringBuffer sb = new StringBuffer("");
+
 			try {
 
 				HttpGet request = new HttpGet();
@@ -54,6 +55,7 @@ public class HttpRequest {
 
 	public String post(String url, Hashtable<String, String> params)
 			throws Exception {
+		HttpClient client = new DefaultHttpClient();
 		try {
 			BufferedReader in = null;
 			StringBuffer sb = new StringBuffer("");

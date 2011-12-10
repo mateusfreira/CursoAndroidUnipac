@@ -11,8 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.unipac.curso.android.primeiraaula.model.UsuarioDto;
 import com.unipac.curso.android.primeiraaula.model.dao.DaoFactory;
 import com.unipac.curso.android.primeiraaula.util.HttpRequest;
+import com.unipac.curso.android.primeiraaula.util.SesssionMananger;
 
 public class CorsoUnipacContagemActivity extends Activity {
 	public static final String TAG = "Curso android";
@@ -53,6 +56,20 @@ public class CorsoUnipacContagemActivity extends Activity {
 
 						}
 					});
+
+					Button agendarButton = (Button) findViewById(R.id.bt_agendamento);
+					agendarButton.setOnClickListener(new OnClickListener() {
+
+						@Override
+						public void onClick(View v) {
+							Intent intent = new Intent(
+									CorsoUnipacContagemActivity.this,
+									Agendamento.class);
+							CorsoUnipacContagemActivity.this
+									.startActivity(intent);
+
+						}
+					});
 				} else {
 					Toast.makeText(CorsoUnipacContagemActivity.this,
 							"Tapado digitou o usuario errado!!!",
@@ -65,11 +82,16 @@ public class CorsoUnipacContagemActivity extends Activity {
 	public boolean login(String usuario, String senha) {
 		try {
 			HttpRequest httpRequest = new HttpRequest();
-			String result = httpRequest.get(BASE_URL + "?action=login&apelido="+usuario+"&senha=" +senha+"&empresa=1");
+			String result = httpRequest.get(BASE_URL + "?action=login&apelido="
+					+ usuario + "senha=" + senha + "&empresa=1");
 			if (result.startsWith("Erro")) {
 				return false;
 			} else {
-				Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+				UsuarioDto usuarioDto = null;
+				usuarioDto = new Gson().fromJson(result, UsuarioDto.class);
+				SesssionMananger.getInstance().setUsuario(usuarioDto);
+				Toast.makeText(this, usuarioDto.getNome(), Toast.LENGTH_LONG)
+						.show();
 				return true;
 			}
 		} catch (Exception e) {

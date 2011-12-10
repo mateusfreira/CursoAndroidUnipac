@@ -5,7 +5,7 @@ import java.util.Date;
 public class UsuarioDto {
 	private int id;
 	private String nome;
-	private Date data_aniversario;
+//	private Date data_aniversario;
 
 	public int getId() {
 		return id;
@@ -23,11 +23,11 @@ public class UsuarioDto {
 		this.nome = nome;
 	}
 
-	public Date getData_aniversario() {
+/*	public Date getData_aniversario() {
 		return data_aniversario;
 	}
 
 	public void setData_aniversario(Date data_aniversario) {
 		this.data_aniversario = data_aniversario;
-	}
+	}*/
 }

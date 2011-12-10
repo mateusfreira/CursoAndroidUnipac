@@ -7,7 +7,6 @@ public class SesssionMananger {
 	private UsuarioDto usuario;
 
 	private SesssionMananger() {
-
 	}
 
 	public static SesssionMananger getInstance() {
