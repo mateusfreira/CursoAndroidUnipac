@@ -12,24 +12,23 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.unipac.curso.android.primeiraaula.model.dao.DaoFactory;
+import com.unipac.curso.android.primeiraaula.util.HttpRequest;
 
 public class CorsoUnipacContagemActivity extends Activity {
 	public static final String TAG = "Curso android";
 	public static final String DATA_BASE = "agenda_1.0";
+	public static final String BASE_URL = "http://10.0.0.145:8080/JavaFlex/Agendamento";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		try {
 			DaoFactory.getInstance().setDb(
-					this.openOrCreateDatabase(DATA_BASE, 
-							Context.MODE_PRIVATE,
+					this.openOrCreateDatabase(DATA_BASE, Context.MODE_PRIVATE,
 							null));
 			DaoFactory.getInstance().factoryPessoaDao();
 		} catch (Exception e) {
-			Log.e(TAG,
-			"Erro ao criar o banco de dados",
-			e);
+			Log.e(TAG, "Erro ao criar o banco de dados", e);
 		}
 		setContentView(R.layout.login);
 		Button entrar = (Button) findViewById(R.id.bt_login);
@@ -64,12 +63,18 @@ public class CorsoUnipacContagemActivity extends Activity {
 	}
 
 	public boolean login(String usuario, String senha) {
-		
-		if (usuario.equals("mateus") && senha.equals("unipac")) {
-			return true;
-		} else {
+		try {
+			HttpRequest httpRequest = new HttpRequest();
+			String result = httpRequest.get(BASE_URL + "?action=login&apelido="+usuario+"&senha=" +senha+"&empresa=1");
+			if (result.startsWith("Erro")) {
+				return false;
+			} else {
+				Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+				return true;
+			}
+		} catch (Exception e) {
+			Log.e(TAG, "Erro ao logar", e);
 			return false;
 		}
-
 	}
 }
