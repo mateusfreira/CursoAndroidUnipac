@@ -54,7 +54,12 @@ public class PessoaDaoSql implements PessoaDao {
 			sql += " )";
 
 		} else {
-			// TODO update
+			sql = "UPDATE " + TABLE_NAME + " set ";
+			sql += " nome = '" + pessoa.getNome() + "',";// nome
+			sql += "telefone = '" + pessoa.getTelefone() + "',";// telefone
+			sql += " celular = '" + pessoa.getCelular() + "',";// celular
+			sql += "aniversario = " + pessoa.getAniversario().getTime();// aniversario
+			sql += " where id = " + pessoa.getId();
 		}
 
 		Log.d(CorsoUnipacContagemActivity.TAG, sql);
